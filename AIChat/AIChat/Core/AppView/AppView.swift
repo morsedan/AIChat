@@ -18,16 +18,10 @@ struct AppView: View {
         AppViewBuilder(
             showOnboarding: showOnboarding,
             mainView: {
-                ZStack {
-                    Color.red.ignoresSafeArea()
-                    Text("TabBar")
-                }
+                TabBarView()
             },
             onboardingView: {
-                ZStack {
-                    Color.blue.ignoresSafeArea()
-                    Text("Onboarding")
-                }
+                WelcomeView()
             }
         )
         .animation(.smooth, value: showOnboarding)
@@ -35,8 +29,8 @@ struct AppView: View {
 }
 
 #Preview {
-    AppView(showOnboarding: true)
+    AppView(showOnboarding: false)
 }
 #Preview {
-    AppView(showOnboarding: false)
+    AppView(showOnboarding: true)
 }
