@@ -9,30 +9,30 @@ import SwiftUI
 
 struct AppViewBuilder<MainView: View, OnboardingView: View>: View {
     
-    var showOnboarding = true
+    var showMainView = false
     @ViewBuilder var mainView: MainView
     @ViewBuilder var onboardingView: OnboardingView
     
     var body: some View {
         ZStack {
-            if showOnboarding {
-                onboardingView
-                    .transition(.move(edge: .leading))
-            } else {
+            if showMainView {
                 mainView
                     .transition(.move(edge: .trailing))
+            } else {
+                onboardingView
+                    .transition(.move(edge: .leading))
             }
         }
-        .animation(.smooth, value: showOnboarding)
+        .animation(.smooth, value: showMainView)
     }
 }
 
 struct PreviewView: View {
-    @State private var showOnboarding = true
+    @State private var showMainView = true
     
     var body: some View {
         AppViewBuilder(
-            showOnboarding: showOnboarding,
+            showMainView: showMainView,
             mainView: {
                 ZStack {
                     Color.red.ignoresSafeArea()
@@ -46,9 +46,9 @@ struct PreviewView: View {
                 }
             }
         )
-        .animation(.smooth, value: showOnboarding)
+        .animation(.smooth, value: showMainView)
         .onTapGesture {
-            showOnboarding.toggle()
+            showMainView.toggle()
         }
     }
 }

@@ -12,11 +12,11 @@ import SwiftUI
 
 struct AppView: View {
     
-    @AppStorage("showOnboardingView") var showOnboarding = true
+    @State var appState: AppState = AppState()
     
     var body: some View {
         AppViewBuilder(
-            showOnboarding: showOnboarding,
+            showMainView: appState.showMainView,
             mainView: {
                 TabBarView()
             },
@@ -24,13 +24,13 @@ struct AppView: View {
                 WelcomeView()
             }
         )
-        .animation(.smooth, value: showOnboarding)
+        .environment(appState)
     }
 }
 
 #Preview {
-    AppView(showOnboarding: false)
+    AppView(appState: AppState(showTabBar: false))
 }
 #Preview {
-    AppView(showOnboarding: true)
+    AppView(appState: AppState(showTabBar: true))
 }

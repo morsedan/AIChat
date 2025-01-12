@@ -1,29 +1,26 @@
+//
+//  AppState.swift
+//  AIChat
+//
+//  Created by Morse on 1/11/25.
+//
+
+import SwiftUI
+
 @Observable
 class AppState {
     
-    private(set) var showTabBar: Bool {
+    private(set) var showMainView: Bool {
         didSet {
-            UserDefaults.showTabBarView = showTabBar
+            UserDefaults.showMainView = showMainView
         }
     }
     
-    init(showTabBar: Bool = UserDefaults.showTabBarView) {
-        self.showTabBar = showTabBar
+    init(showTabBar: Bool = UserDefaults.showMainView) {
+        self.showMainView = showTabBar
     }
     
-    func updateViewState(showTabBarView: Bool) {
-        showTabBar = showTabBarView
-    }
-}
-
-extension UserDefaults {
-    
-    private enum Keys {
-        static let showTabBarView = "showTabBarView"
-    }
-    
-    static var showTabBarView: Bool {
-        get { UserDefaults.standard.bool(forKey: Keys.showTabBarView) }
-        set { UserDefaults.standard.set(newValue, forKey: Keys.showTabBarView) }
+    func updateViewState(showMainView: Bool) {
+        self.showMainView = showMainView
     }
 }
