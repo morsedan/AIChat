@@ -20,7 +20,6 @@ extension UserDefaults {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Keys.showMainView)
-            let show = UserDefaults.standard.bool(forKey: Keys.showMainView)
         }
     }
 }
