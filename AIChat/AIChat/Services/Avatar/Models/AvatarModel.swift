@@ -51,7 +51,7 @@ enum CharacterLocation: String {
     case space
 }
 
-struct AvatarModel {
+struct AvatarModel: Hashable {
     let avatarID: String
     let name: String?
     let characterOption: CharacterOption?
