@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CharacterOption: String {
+enum CharacterOption: String, CaseIterable, Hashable {
     static var `default`: Self {
         .man
     }
