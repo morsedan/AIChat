@@ -17,6 +17,11 @@ enum CharacterOption: String, CaseIterable, Hashable {
     case alien
     case dog
     case cat
+    
+    var startsWithVowel: Bool {
+        guard let first = rawValue.first else { return false }
+        return ["a", "e", "i", "o", "u"].contains(first)
+    }
 }
 
 enum CharacterAction: String {
@@ -153,6 +158,7 @@ struct AvatarDescriptionBuilder {
     }
     
     var characterDescription: String {
-        "A \(characterOption.rawValue) that is \(characterAction.rawValue) in the \(characterLocation.rawValue)"
+        let prefix = characterOption.startsWithVowel ? "An" : "A"
+        return "\(prefix) \(characterOption.rawValue) that is \(characterAction.rawValue) in the \(characterLocation.rawValue)"
     }
 }
