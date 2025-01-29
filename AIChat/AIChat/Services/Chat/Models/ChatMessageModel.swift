@@ -30,11 +30,11 @@ struct ChatMessageModel {
         return seenByIds.contains(userId)
     }
     
-    static var mock: ChatMessageModel {
+    static var mock: Self {
         mocks[0]
     }
     
-    static var mocks: [ChatMessageModel] {
+    static var mocks: [Self] {
         return [
             // Adding time intervals using the extension for ChatMessageModel
             ChatMessageModel(
