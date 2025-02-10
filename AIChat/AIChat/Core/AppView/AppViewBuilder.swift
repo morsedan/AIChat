@@ -27,7 +27,7 @@ struct AppViewBuilder<MainView: View, OnboardingView: View>: View {
     }
 }
 
-struct PreviewView: View {
+private struct PreviewView: View {
     @State private var showMainView = true
     
     var body: some View {
