@@ -8,15 +8,30 @@
 import Foundation
 
 enum CharacterOption: String, CaseIterable, Hashable {
-    static var `default`: Self {
-        .man
-    }
-    
     case man
     case woman
     case alien
     case dog
     case cat
+    
+    static var `default`: Self {
+        .man
+    }
+    
+    var plural: String {
+        switch self {
+        case .man:
+            return "men"
+        case .woman:
+            return "women"
+        case .alien:
+            return "aliens"
+        case .dog:
+            return "dogs"
+        case .cat:
+            return "cats"
+        }
+    }
     
     var startsWithVowel: Bool {
         guard let first = rawValue.first else { return false }
