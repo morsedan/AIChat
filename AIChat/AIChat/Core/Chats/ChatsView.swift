@@ -10,6 +10,8 @@ import SwiftUI
 struct ChatsView: View {
     
     @State private var chats: [ChatModel] = ChatModel.mocks
+    @State private var recentAvatars: [AvatarModel] = AvatarModel.mocks
+    
     @State private var path: [NavigationPathOption] = []
     
     var body: some View {
