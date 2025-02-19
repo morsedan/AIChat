@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0B4E4222D5FC803003A4E5B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C0B4E4212D5FC803003A4E5B /* FirebaseAuth */; };
+		C0B4E54D2D66481F003A4E5B /* SignInAppleAsync in Frameworks */ = {isa = PBXBuildFile; productRef = C0B4E54C2D66481F003A4E5B /* SignInAppleAsync */; };
 		C0B9CB2D2D4BFEE300CFC7B2 /* SwiftfulUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = C0B9CB2C2D4BFEE300CFC7B2 /* SwiftfulUtilities */; };
 		C0D43CA52D341D7D002DF748 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C0D43CA42D341D7D002DF748 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0B4E54D2D66481F003A4E5B /* SignInAppleAsync in Frameworks */,
 				C0D43CA52D341D7D002DF748 /* SDWebImageSwiftUI in Frameworks */,
 				C0B4E4222D5FC803003A4E5B /* FirebaseAuth in Frameworks */,
 				C0B9CB2D2D4BFEE300CFC7B2 /* SwiftfulUtilities in Frameworks */,
@@ -125,6 +127,7 @@
 				C0D43CA42D341D7D002DF748 /* SDWebImageSwiftUI */,
 				C0B9CB2C2D4BFEE300CFC7B2 /* SwiftfulUtilities */,
 				C0B4E4212D5FC803003A4E5B /* FirebaseAuth */,
+				C0B4E54C2D66481F003A4E5B /* SignInAppleAsync */,
 			);
 			productName = AIChat;
 			productReference = C0D43C452D30844D002DF748 /* AIChat.app */;
@@ -212,6 +215,7 @@
 				C0D43CA32D341D7D002DF748 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				C0B9CB2B2D4BFEE300CFC7B2 /* XCRemoteSwiftPackageReference "SwiftfulUtilities" */,
 				C0B4E4202D5FC803003A4E5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C0B4E54B2D66481F003A4E5B /* XCRemoteSwiftPackageReference "SignInAppleAsync" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C0D43C462D30844D002DF748 /* Products */;
@@ -643,6 +647,14 @@
 				minimumVersion = 11.8.1;
 			};
 		};
+		C0B4E54B2D66481F003A4E5B /* XCRemoteSwiftPackageReference "SignInAppleAsync" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SignInAppleAsync.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		C0B9CB2B2D4BFEE300CFC7B2 /* XCRemoteSwiftPackageReference "SwiftfulUtilities" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulUtilities.git";
@@ -666,6 +678,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C0B4E4202D5FC803003A4E5B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		C0B4E54C2D66481F003A4E5B /* SignInAppleAsync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0B4E54B2D66481F003A4E5B /* XCRemoteSwiftPackageReference "SignInAppleAsync" */;
+			productName = SignInAppleAsync;
 		};
 		C0B9CB2C2D4BFEE300CFC7B2 /* SwiftfulUtilities */ = {
 			isa = XCSwiftPackageProductDependency;

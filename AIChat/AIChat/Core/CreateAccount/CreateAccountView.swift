@@ -38,6 +38,10 @@ struct CreateAccountView: View {
         .padding(16)
         .padding(.top, 40)
     }
+    
+    private func onSignInAppleTap() {
+        
+    }
 }
 
 #Preview {
