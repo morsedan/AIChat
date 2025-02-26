@@ -29,6 +29,13 @@ struct AppView: View {
         .task {
             await checkUserStatus()
         }
+        .onChange(of: appState.showMainView) { _, showMainView in
+            if showMainView {
+                Task {
+                    await checkUserStatus()
+                }
+            }
+        }
     }
     
     private func checkUserStatus() async {

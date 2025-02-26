@@ -39,9 +39,40 @@ struct FirebaseAuthService {
             rawNonce: response.nonce
         )
         
+        // Try to link to existing anonymous account.
+        if let user = Auth.auth().currentUser,
+            user.isAnonymous,
+            let result = try? await user.link(with: credential) {
+            return result.asAuthInfo
+        }
+        
+        // Otherwise sign in to new account.
         let result = try await Auth.auth().signIn(with: credential)
         
         return result.asAuthInfo
+    }
+    
+    func signOut() throws {
+        try Auth.auth().signOut()
+    }
+    
+    func deleteAccount() async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw AuthError.userNotFound
+        }
+        
+        try await user.delete()
+    }
+    
+    enum AuthError: LocalizedError {
+        case userNotFound
+        
+        var errorDescription: String? {
+            switch self {
+            case .userNotFound:
+                return "Current authenticated user not found."
+            }
+        }
     }
 }
 
