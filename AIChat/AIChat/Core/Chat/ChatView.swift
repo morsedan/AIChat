@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ChatView: View {
     
     @State private var chatMessages: [ChatMessageModel] = ChatMessageModel.mocks
