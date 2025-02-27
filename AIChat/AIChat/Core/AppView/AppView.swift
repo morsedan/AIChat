@@ -30,7 +30,7 @@ struct AppView: View {
             await checkUserStatus()
         }
         .onChange(of: appState.showMainView) { _, showMainView in
-            if showMainView {
+            if !showMainView {
                 Task {
                     await checkUserStatus()
                 }
