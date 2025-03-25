@@ -87,7 +87,6 @@ struct FirebaseAuthService: AuthService {
 }
 
 extension AuthDataResult {
-    
     var asAuthInfo: (user: UserAuthInfo, isNewUser: Bool) {
         let user = UserAuthInfo(user: user)
         let isNewUser = additionalUserInfo?.isNewUser ?? true
